@@ -20,6 +20,7 @@ $pdo = new PDO("mysql:host=$server;dbname=$db_name", $db_user, $db_pass);
 $db = new NotORM($pdo);
 
 $app = new \Slim\Slim();
+$app->response()->header("Content-Type", "application/json");
 
 $app->get("/", function(){
 	echo "hello";
